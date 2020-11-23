@@ -1,0 +1,83 @@
+.menu-main {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+.navbar {
+    height: 50px;
+}
+
+.head-container {
+    background-color: royalblue;
+}
+
+.page-head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Yellowtail', cursive;
+    height: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+}
+
+form {
+    width: 50%;
+    height: 80%;
+}
+
+.menu-item {
+    text-align: center;
+}
+
+@media screen and (max-width: 1025px) {
+    .menu-item {
+        font-size: 10px;
+    }
+}
+
+
+body {
+    margin: 0;
+}
+ header {
+    margin-top: 20px;
+ }
+
+ header input {
+    width: 93%;
+    height: 100%;
+    padding-left: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px 0 0 5px;
+    outline: none;
+ }
+
+ .page-head > * {
+     margin-left: 10px;
+ }
+
+form button {
+    width: 7%;
+    height: 100%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+} 
+
+.menu-item a {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+
+
