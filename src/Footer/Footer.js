@@ -1,8 +1,11 @@
 import React from "react";
-import "./Footer.css"
+import styled from "styled-components";
 
-const Footer = () => (
-    <footer>Тут футер</footer>
-);
+const FooterContent = styled.footer`
+  border: 2px solid black;
+  height: 100px;
+`;
+
+const Footer = () => <FooterContent>Тут футер</FooterContent>;
 
 export default Footer;
