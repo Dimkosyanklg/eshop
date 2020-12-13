@@ -1,6 +1,72 @@
 import React from "react";
 import styled from "styled-components";
 
+const Header = () => (
+  <HeaderBody>
+    <HeaderContainer>
+      <HeaderContent>
+        <a href="http://github.com/Dimkosyanklg">
+          <i className="fab fa-github"></i>
+        </a>
+        <form>
+          <input type="search" />
+          <button type="submit">
+            <i className="fas fa-search"></i>
+          </button>
+        </form>
+        <i className="fas fa-map-marker-alt"></i>
+        <i className="fas fa-user"></i>
+      </HeaderContent>
+    </HeaderContainer>
+    <Navigation>
+      <MenuMain>
+        <MenuItem>
+          <a href="">Гаджеты</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Компьютеры</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Фото</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">TV</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Аудио</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Бытовая техника</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Климат</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Дом</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Детские товары</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Авто</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Инструмент</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Туризм</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Спорт</a>
+        </MenuItem>
+        <MenuItem>
+          <a href="">Часы и украшения</a>
+        </MenuItem>
+      </MenuMain>
+    </Navigation>
+  </HeaderBody>
+);
+
 const HeaderBody = styled.header`
   margin-top: 20px;
 `;
@@ -8,21 +74,21 @@ const HeaderContainer = styled.div`
   background-color: royalblue;
 `;
 const HeaderContent = styled.div`
-  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
 
-  & {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 50px;
-    margin-left: 15%;
-    margin-right: 15%;
-    width: 70%;
+  & > * {
+    margin-left: 2%;
   }
 
   form {
-    width: 50%;
-    height: 80%;
+    width: 60%;
+    height: 65%;
   }
 
   form button {
@@ -43,104 +109,32 @@ const HeaderContent = styled.div`
   }
 
   .fab.fa-github {
-    font-size: 30px;
+    font-size: 50px;
+    color: #000000;
   }
 `;
 const Navigation = styled.nav`
-  & {
-    height: 50px;
-  }
+  height: auto;
+`;
+const MenuMain = styled.ul`
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-left: 15%;
+  margin-right: 15%;
+  width: 70%;
+`;
+const MenuItem = styled.li`
+  text-align: center;
 
-  ul.menu-main {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    //position: relative;
-    margin-left: 15%;
-    margin-right: 15%;
-    width: 70%;
-  }
-
-  li.menu-item {
-    text-align: center;
-  }
-
-  li.menu-item a {
+  a {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     text-decoration: none;
     color: rgb(100, 100, 100);
-  }
-
-  @media screen and (max-width: 1100px) {
-    .menu-item {
-      font-size: 10px;
-    }
+    font-size: 0.8vw;
+    font-weight: 600;
   }
 `;
-const Header = () => (
-  <HeaderBody>
-    <HeaderContainer>
-      <HeaderContent>
-        <a href="http://github.com/Dimkosyanklg">
-          <i class="fab fa-github"></i>
-        </a>
-        <form>
-          <input type="search" placeholder="Не работает(пока(наверно))" />
-          <button type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </HeaderContent>
-    </HeaderContainer>
-    <Navigation>
-      <ul className="menu-main">
-        <li className="menu-item">
-          <a href="">Гаджеты</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Компьютеры</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Фото</a>
-        </li>
-        <li className="menu-item">
-          <a href="">TV</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Аудио</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Бытовая техника</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Климат</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Дом</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Детские товары</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Авто</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Инструмент</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Туризм</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Спорт</a>
-        </li>
-        <li className="menu-item">
-          <a href="">Часы и украшения</a>
-        </li>
-      </ul>
-    </Navigation>
-  </HeaderBody>
-);
-
 export default Header;

@@ -7,7 +7,7 @@ const SidebarContent = styled.div`
     right: 0;
     top: 0;
     width: 20%;
-    height: 800px;
+    height: 50%;
     box-sizing: border-box;
 `;
 

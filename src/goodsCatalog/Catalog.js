@@ -1,6 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
+const Catalog = ({ goodsItem }) => (
+  <GoodsContainer>
+    {goodsItem.map(({ name, price, imgSrc }) => (
+      <GoodsItem key={name}>
+        <GoodsItemImage>
+          <img src={imgSrc} alt="" />
+        </GoodsItemImage>
+        <GoodsItemName>
+          <a href="">{name}</a>
+        </GoodsItemName>
+        <GoodsItemPrice>{price}</GoodsItemPrice>
+      </GoodsItem>
+    ))}
+  </GoodsContainer>
+);
+
 const GoodsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -18,6 +34,7 @@ const GoodsItem = styled.div`
   margin-bottom: 1%;
   margin-left: 1%;
   box-sizing: border-box;
+  font-size: 1vw;
 
   a {
     text-decoration: none;
@@ -29,7 +46,7 @@ const GoodsItem = styled.div`
   }
 `;
 const GoodsItemImage = styled.div`
-  height: 50%;
+  height: 60%;
   img {
     width: 100%;
     height: 100%;
@@ -38,45 +55,13 @@ const GoodsItemImage = styled.div`
 `;
 const GoodsItemName = styled.div`
   height: 20%;
-  font-size: 16px;
-
-  @media screen and (max-width: 1025px) {
-    font-size: 10px;
-  }
-
-  @media screen and (max-width: 810px) {
-    font-size: 8px;
-  }
+  font-size: 0.8em;
 `;
 const GoodsItemPrice = styled.div`
-  height: 10%;
-  color: rgb(255, 0, 0);
-  font-weight: bold;
-  font-size: 18px;
-
-  @media screen and (max-width: 1025px) {
-    font-size: 14px;
-  }
-
-  @media screen and (max-width: 810px) {
-    font-size: 12px;
-  }
+  height: 20%;
+  color: rgb(237, 20, 20);
+  font-weight: 900;
+  font-size: 1.1em;
 `;
-
-const Catalog = ({ goodsItem }) => (
-  <GoodsContainer>
-    {goodsItem.map(({ name, price, imgSrc }) => (
-      <GoodsItem key={name}>
-        <GoodsItemImage>
-          <img src={imgSrc} alt="" />
-        </GoodsItemImage>
-        <GoodsItemName>
-          <a href="">{name}</a>
-        </GoodsItemName>
-        <GoodsItemPrice>{price}</GoodsItemPrice>
-      </GoodsItem>
-    ))}
-  </GoodsContainer>
-);
 
 export default Catalog;
