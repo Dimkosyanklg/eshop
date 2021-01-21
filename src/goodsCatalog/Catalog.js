@@ -1,21 +1,111 @@
 import React from "react";
 import styled from "styled-components";
 
-const Catalog = ({ goodsItem }) => (
-  <GoodsContainer>
-    {goodsItem.map(({ name, price, imgSrc }) => (
-      <GoodsItem key={name}>
-        <GoodsItemImage>
-          <img src={imgSrc} alt="" />
-        </GoodsItemImage>
-        <GoodsItemName>
-          <a href="">{name}</a>
-        </GoodsItemName>
-        <GoodsItemPrice>{price}</GoodsItemPrice>
-      </GoodsItem>
-    ))}
-  </GoodsContainer>
-);
+class Catalog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { filteredGoodsItem: [] };
+  }
+  checkedTest = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].checked === false || arr[i] === undefined) {
+        continue;
+      } else {
+        return false;
+      }
+    }
+    return true;
+  };
+  filter = () => {
+    if (this.checkedTest(this.props.firms)) {
+      this.setState({ filteredGoodsItem: this.props.goodsItem });
+    } else {
+      let checkedFirms = this.props.firms.filter((item) => {
+        if (item.checked) {
+          return item;
+        }
+      });
+      this.setState({
+        filteredGoodsItem: this.props.goodsItem.filter((item) => {
+          let splitName = item.name.split(" ");
+          for (let i = 0; i < checkedFirms.length; i++) {
+            if (splitName[0] === checkedFirms[i].label) {
+              return item;
+            }
+          }
+        }),
+      });
+    }
+  };
+  componentDidUpdate(prevProps){
+    if (this.props.firms != prevProps.firms) {
+      this.filter();
+    }
+  }
+  render(){
+    return(
+      <GoodsContainer>
+       {this.state.filteredGoodsItem.map(({ id, name, imgSrc, price }) => (
+        <GoodsItem key={id}>
+          <GoodsItemImage>
+            <img src={imgSrc} alt="" />
+          </GoodsItemImage>
+          <GoodsItemName>
+            <a href="">{name}</a>
+          </GoodsItemName>
+          <GoodsItemPrice>{price}</GoodsItemPrice>
+        </GoodsItem>
+      ))}
+    </GoodsContainer>
+    )
+  }
+}
+
+// const Catalog = (props) => {
+//   let filteredGoodsItem = [];
+//   function checkedTest(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//       if (arr[i].checked === false || arr[i] === undefined) {
+//         continue;
+//       } else {
+//         return false;
+//       }
+//     }
+//     return true;
+//   }
+//   if (checkedTest(props.firms)) {
+//     filteredGoodsItem = props.goodsItem;
+//   } else {
+//     let checkedFirms = props.firms.filter((item) => {
+//       if (item.checked) {
+//         return item;
+//       }
+//     });
+//     filteredGoodsItem = props.goodsItem.filter((item) => {
+//       let splitName = item.name.split(" ");
+//       for (let i = 0; i < checkedFirms.length; i++) {
+//         if (splitName[0] === checkedFirms[i].label) {
+//           return item;
+//         }
+//       }
+//     });
+//   }
+//   return (
+//     <GoodsContainer>
+//       {filteredGoodsItem.map(({ id, name, imgSrc, price }) => (
+//         <GoodsItem key={id}>
+//           <GoodsItemImage>
+//             <img src={imgSrc} alt="" />
+//           </GoodsItemImage>
+//           <GoodsItemName>
+//             <a href="">{name}</a>
+//           </GoodsItemName>
+//           <GoodsItemPrice>{price}</GoodsItemPrice>
+//         </GoodsItem>
+//       ))}
+//     </GoodsContainer>
+//   );
+// };
 
 const GoodsContainer = styled.div`
   display: flex;

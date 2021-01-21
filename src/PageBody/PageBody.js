@@ -8,11 +8,28 @@ const PageContent = styled.div`
   position: relative;
   margin: 20px 15% 0 15%;
 `;
-const PageBody = () => (
-  <PageContent>
-    <Catalog goodsItem={catalogSoccerBalls} />
-    <Sidebar />
-  </PageContent>
-);
+class PageBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firms: [],
+    };
+  }
+  getFilterData = (value) => {
+    this.setState({firms: value})
+  };
+  
+  render() {
+    return (
+      <PageContent>
+        <Catalog goodsItem={catalogSoccerBalls} firms={this.state.firms} />
+        <Sidebar
+          goodsItem={catalogSoccerBalls}
+          getFilterData={this.getFilterData}
+        />
+      </PageContent>
+    );
+  }
+}
 
 export default PageBody;
