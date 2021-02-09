@@ -1,8 +1,8 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import Header from "./Header/Header.js";
-import CatalogBody from "./CatalogBody/CatalogBody.js";
 import Footer from "./Footer/Footer.js";
+import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -10,11 +10,16 @@ body {
 }
 `;
 
-const PageRender = () => [
+const MainContent = styled.div`
+  height: 500px;
+  margin: 20px 15% 0 15%;
+`;
+
+const MainPage = () => [
   <GlobalStyle key="globalStyle" />,
   <Header key="navbar" />,
-  <CatalogBody key="catalogBody" />,
+  <MainContent key="main-content">ТУТ ВСЯКАЯ ЗАЛЕПА</MainContent>,
   <Footer key="footer" />,
 ];
 
-export default PageRender;
+export default MainPage;

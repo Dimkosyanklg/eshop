@@ -61,52 +61,6 @@ class Catalog extends React.Component {
   }
 }
 
-// const Catalog = (props) => {
-//   let filteredGoodsItem = [];
-//   function checkedTest(arr) {
-//     for (let i = 0; i < arr.length; i++) {
-//       if (arr[i].checked === false || arr[i] === undefined) {
-//         continue;
-//       } else {
-//         return false;
-//       }
-//     }
-//     return true;
-//   }
-//   if (checkedTest(props.firms)) {
-//     filteredGoodsItem = props.goodsItem;
-//   } else {
-//     let checkedFirms = props.firms.filter((item) => {
-//       if (item.checked) {
-//         return item;
-//       }
-//     });
-//     filteredGoodsItem = props.goodsItem.filter((item) => {
-//       let splitName = item.name.split(" ");
-//       for (let i = 0; i < checkedFirms.length; i++) {
-//         if (splitName[0] === checkedFirms[i].label) {
-//           return item;
-//         }
-//       }
-//     });
-//   }
-//   return (
-//     <GoodsContainer>
-//       {filteredGoodsItem.map(({ id, name, imgSrc, price }) => (
-//         <GoodsItem key={id}>
-//           <GoodsItemImage>
-//             <img src={imgSrc} alt="" />
-//           </GoodsItemImage>
-//           <GoodsItemName>
-//             <a href="">{name}</a>
-//           </GoodsItemName>
-//           <GoodsItemPrice>{price}</GoodsItemPrice>
-//         </GoodsItem>
-//       ))}
-//     </GoodsContainer>
-//   );
-// };
-
 const GoodsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;

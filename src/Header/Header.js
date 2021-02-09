@@ -21,46 +21,43 @@ const Header = () => (
     <Navigation>
       <MenuMain>
         <MenuItem>
-          <a href="">Гаджеты</a>
+          <a href="/gadget">Гаджеты</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Компьютеры</a>
+          <a href="/computer">Компьютеры</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Фото</a>
+          <a href="/photo">Фото</a>
         </MenuItem>
         <MenuItem>
-          <a href="">TV</a>
+          <a href="/tv">TV</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Аудио</a>
+          <a href="/audio">Аудио</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Бытовая техника</a>
+          <a href="house-appliances">Бытовая техника</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Климат</a>
+          <a href="/climate">Климат</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Дом</a>
+          <a href="/house">Дом</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Детские товары</a>
+          <a href="/for-children">Детские товары</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Авто</a>
+          <a href="/car">Авто</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Инструмент</a>
+          <a href="/tools">Инструмент</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Туризм</a>
+          <a href="/tourism">Туризм</a>
         </MenuItem>
         <MenuItem>
-          <a href="">Спорт</a>
-        </MenuItem>
-        <MenuItem>
-          <a href="">Часы и украшения</a>
+          <a href="/sport">Спорт</a>
         </MenuItem>
       </MenuMain>
     </Navigation>

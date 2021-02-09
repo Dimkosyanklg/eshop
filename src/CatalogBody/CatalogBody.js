@@ -8,7 +8,7 @@ const PageContent = styled.div`
   position: relative;
   margin: 20px 15% 0 15%;
 `;
-class PageBody extends React.Component {
+class CatalogBody extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,4 +32,4 @@ class PageBody extends React.Component {
   }
 }
 
-export default PageBody;
+export default CatalogBody;
