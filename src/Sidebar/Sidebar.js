@@ -4,6 +4,7 @@ import styled from "styled-components";
 class CreateButtons extends React.Component {
   constructor(props) {
     super(props);
+    // this.state.firmsArray - названия фирм для создания кнопок сортировки
     this.state = {
       firmsArray: Array.from(
         new Set(
@@ -14,6 +15,9 @@ class CreateButtons extends React.Component {
       ).map((firm, index) => ({ label: firm, id: index, checked: false })),
     };
   }
+
+  /* Метод для обработки нажатий на кнопки */
+  /* Перезаписывает state при нажатии на конпку */
   checkboxHandler = (e, currentId) => {
     this.setState({
       firmsArray: this.state.firmsArray.map(({ label, id, checked }) =>
@@ -23,7 +27,9 @@ class CreateButtons extends React.Component {
       ),
     });
   };
-  componentDidMount(){
+
+  /* Передает this.state.firmsArray в родительский компонент */
+  componentDidMount() {
     this.props.getFilterData(this.state.firmsArray);
   }
   componentDidUpdate(prevProps, prevState) {

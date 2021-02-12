@@ -11,13 +11,17 @@ const PageContent = styled.div`
   align-items: flex-start;
   margin: 20px 15% 0 15%;
 `;
+
+/* Класс CatalogBody рендерит тело страницы с каталогом */
 class CatalogBody extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      firms: [],
+    this.state = {//this.state.firms передается в Catalog для сортировки
+      firms: [], // компонент Sidebar установит this.state.firms
     };
   }
+  
+  /* Метод для получения фирм товаров из компонента Sidebar */
   getFilterData = (value) => {
     this.setState({firms: value})
   };
@@ -25,9 +29,9 @@ class CatalogBody extends React.Component {
   render() {
     return (
       <PageContent>
-        <Catalog goodsItem={catalogBackpacks} firms={this.state.firms} />
+        <Catalog goodsItem={catalogSoccerBalls} firms={this.state.firms} />
         <Sidebar
-          goodsItem={catalogBackpacks}
+          goodsItem={catalogSoccerBalls}
           getFilterData={this.getFilterData}
         />
       </PageContent>

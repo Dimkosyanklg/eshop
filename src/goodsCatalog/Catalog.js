@@ -6,6 +6,9 @@ class Catalog extends React.Component {
     super(props);
     this.state = { filteredGoodsItem: [] };
   }
+
+  /* Метод для проверки кнопок сортировки */
+  /* Если ни одна кнопка не нажата - вернет true */
   checkedTest = (arr) => {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].checked === false || arr[i] === undefined) {
@@ -16,15 +19,19 @@ class Catalog extends React.Component {
     }
     return true;
   };
+
+  /* Метод возвращает остортированный массив товаров */
   filterFirm = () => {
-    if (this.checkedTest(this.props.firms)) {
+    if (this.checkedTest(this.props.firms)) { // Если кнопки не нажаты, то рендерятся все товары
       this.setState({ filteredGoodsItem: this.props.goodsItem });
     } else {
+      // Массив выбранных кнопок
       let checkedFirms = this.props.firms.filter((item) => {
         if (item.checked) {
           return item;
         }
       });
+      // Массив отсортированных товаров для рендера
       this.setState({
         filteredGoodsItem: this.props.goodsItem.filter((item) => {
           for (let i = 0; i < checkedFirms.length; i++) {
