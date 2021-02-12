@@ -8,8 +8,7 @@ class CreateButtons extends React.Component {
       firmsArray: Array.from(
         new Set(
           this.props.goodsItem.map((item) => {
-            let splitName = item.name.split(" ");
-            return splitName[0];
+            return item.firm;
           })
         )
       ).map((firm, index) => ({ label: firm, id: index, checked: false })),
@@ -61,11 +60,9 @@ const Sidebar = (props) => (
 
 const SidebarContent = styled.div`
   background-color: rgb(250, 234, 204);
-  position: absolute;
-  right: 0;
-  top: 0;
   width: 20%;
   height: 35vw;
+  margin-left: 2%;
   box-sizing: border-box;
 `;
 const ButtonsContainer = styled.div`

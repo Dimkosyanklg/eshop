@@ -16,7 +16,7 @@ class Catalog extends React.Component {
     }
     return true;
   };
-  filter = () => {
+  filterFirm = () => {
     if (this.checkedTest(this.props.firms)) {
       this.setState({ filteredGoodsItem: this.props.goodsItem });
     } else {
@@ -27,9 +27,8 @@ class Catalog extends React.Component {
       });
       this.setState({
         filteredGoodsItem: this.props.goodsItem.filter((item) => {
-          let splitName = item.name.split(" ");
           for (let i = 0; i < checkedFirms.length; i++) {
-            if (splitName[0] === checkedFirms[i].label) {
+            if (item.firm === checkedFirms[i].label) {
               return item;
             }
           }
@@ -38,8 +37,8 @@ class Catalog extends React.Component {
     }
   };
   componentDidUpdate(prevProps){
-    if (this.props.firms != prevProps.firms) {
-      this.filter();
+    if (this.props.firms !== prevProps.firms) {
+      this.filterFirm();
     }
   }
   render(){
