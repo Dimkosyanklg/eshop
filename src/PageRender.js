@@ -12,10 +12,10 @@ body {
 `;
 
 //Компонент PageRender для отрисовки полной страницы
-const PageRender = () => [
+const PageRender = (props) => [
   <GlobalStyle key="globalStyle" />,
   <Header key="navbar" />,
-  <CatalogBody key="catalogBody" />,
+  <CatalogBody key="catalogBody" goodsItem={props.goodsItem}/>,
   <Footer key="footer" />,
 ];
 

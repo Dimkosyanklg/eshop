@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = () => (
   <HeaderBody>
@@ -21,43 +22,43 @@ const Header = () => (
     <Navigation>
       <MenuMain>
         <MenuItem>
-          <a href="/gadget">Гаджеты</a>
+          <Link to="/gadget">Гаджеты</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/computer">Компьютеры</a>
+          <Link to="/computer">Компьютеры</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/photo">Фото</a>
+          <Link to="/photo">Фото</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/tv">TV</a>
+          <Link to="/tv">TV</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/audio">Аудио</a>
+          <Link to="/Linkudio">Аудио</Link>
         </MenuItem>
         <MenuItem>
-          <a href="house-appliances">Бытовая техника</a>
+          <Link to="/house-appliances">Бытовая техника</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/climate">Климат</a>
+          <Link to="/climate">Климат</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/house">Дом</a>
+          <Link to="/house">Дом</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/for-children">Детские товары</a>
+          <Link to="/for-children">Детские товары</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/car">Авто</a>
+          <Link to="/car">Авто</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/tools">Инструмент</a>
+          <Link to="/tools">Инструмент</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/tourism">Туризм</a>
+          <Link to="/tourism">Туризм</Link>
         </MenuItem>
         <MenuItem>
-          <a href="/sport">Спорт</a>
+          <Link to="/sport">Спорт</Link>
         </MenuItem>
       </MenuMain>
     </Navigation>

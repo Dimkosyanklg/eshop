@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Catalog from "../goodsCatalog/Catalog.js";
 import Sidebar from "../Sidebar/Sidebar.js";
-import { catalogSoccerBalls } from "../goodsCatalog/catalogSoccerBalls.js";
-import { catalogBackpacks } from "../goodsCatalog/catalogBackpacks.js";
 
 const PageContent = styled.div`
   position: relative;
@@ -29,9 +27,9 @@ class CatalogBody extends React.Component {
   render() {
     return (
       <PageContent>
-        <Catalog goodsItem={catalogSoccerBalls} firms={this.state.firms} />
+        <Catalog goodsItem={this.props.goodsItem} firms={this.state.firms} />
         <Sidebar
-          goodsItem={catalogSoccerBalls}
+          goodsItem={this.props.goodsItem}
           getFilterData={this.getFilterData}
         />
       </PageContent>
