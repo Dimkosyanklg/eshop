@@ -96,7 +96,7 @@ const GoodsItem = styled.div`
   }
 `;
 const GoodsItemImage = styled.div`
-  height: 60%;
+  height: 70%;
   img {
     width: 100%;
     height: 100%;
@@ -108,7 +108,7 @@ const GoodsItemName = styled.div`
   font-size: 0.8em;
 `;
 const GoodsItemPrice = styled.div`
-  height: 20%;
+  height: 10%;
   color: rgb(237, 20, 20);
   font-weight: 900;
   font-size: 1.1em;

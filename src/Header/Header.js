@@ -9,14 +9,19 @@ const Header = () => (
         <a href="http://github.com/Dimkosyanklg">
           <i className="fab fa-github"></i>
         </a>
-        <form>
-          <input type="search" />
-          <button type="submit">
-            <i className="fas fa-search"></i>
-          </button>
-        </form>
-        <i className="fas fa-map-marker-alt"></i>
-        <i className="fas fa-user"></i>
+        <SearchBar>
+          <form>
+            <input type="search" />
+            <button type="submit">
+              <i className="fas fa-search"></i>
+            </button>
+          </form>
+        </SearchBar>
+        <HeaderIcons>
+          <i className="fas fa-map-marker-alt"></i>
+          <i className="fas fa-user"></i>
+          <i className="fas fa-shopping-cart"></i>
+        </HeaderIcons>
       </HeaderContent>
     </HeaderContainer>
     <Navigation>
@@ -34,7 +39,7 @@ const Header = () => (
           <Link to="/tv">TV</Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/Linkudio">Аудио</Link>
+          <Link to="/audio">Аудио</Link>
         </MenuItem>
         <MenuItem>
           <Link to="/house-appliances">Бытовая техника</Link>
@@ -73,37 +78,15 @@ const HeaderContainer = styled.div`
 `;
 const HeaderContent = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   height: 60px;
   margin-left: 15%;
   margin-right: 15%;
   width: 70%;
 
-  & > * {
-    margin-left: 2%;
-  }
-
-  form {
-    width: 60%;
-    height: 65%;
-  }
-
-  form button {
-    width: 7%;
-    height: 100%;
-    border: none;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
-
-  form input {
-    width: 93%;
-    height: 100%;
-    padding-left: 10px;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 5px 0 0 5px;
-    outline: none;
+  a {
+    width: 10%;
   }
 
   .fab.fa-github {
@@ -133,6 +116,40 @@ const MenuItem = styled.li`
     color: rgb(100, 100, 100);
     font-size: 0.8vw;
     font-weight: 600;
+  }
+`;
+const HeaderIcons = styled.div`
+  width: 20%;
+  color: rgb(212, 212, 212);
+  display: flex;
+  justify-content: space-around;
+`;
+const SearchBar = styled.div`
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  form {
+    height: 65%;
+    width: 100%;
+  }
+
+  form button {
+    width: 7%;
+    height: 100%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+
+  form input {
+    width: 93%;
+    height: 100%;
+    padding-left: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px 0 0 5px;
+    outline: none;
   }
 `;
 export default Header;
