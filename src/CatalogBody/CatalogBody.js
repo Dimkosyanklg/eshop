@@ -14,16 +14,17 @@ const PageContent = styled.div`
 class CatalogBody extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {//this.state.firms передается в Catalog для сортировки
+    this.state = {
+      //this.state.firms передается в Catalog для сортировки
       firms: [], // компонент Sidebar установит this.state.firms
     };
   }
-  
+
   /* Метод для получения фирм товаров из компонента Sidebar */
   getFilterData = (value) => {
-    this.setState({firms: value})
+    this.setState({ firms: value });
   };
-  
+
   render() {
     return (
       <PageContent>

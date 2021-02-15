@@ -15,7 +15,7 @@ body {
 const PageRender = (props) => [
   <GlobalStyle key="globalStyle" />,
   <Header key="navbar" />,
-  <CatalogBody key="catalogBody" goodsItem={props.goodsItem}/>,
+  <CatalogBody key="catalogBody" goodsItem={props.goodsItem} />,
   <Footer key="footer" />,
 ];
 

@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import PageRender from "./PageRender.js";
 import MainPage from "./MainPage.js";
+import Basket from "./Basket/Basket.js";
 import { catalogSoccerBalls } from "./goodsCatalog/catalogSoccerBalls.js";
 import { catalogBackpacks } from "./goodsCatalog/catalogBackpacks.js";
 import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
@@ -19,6 +20,7 @@ ReactDOM.render(
       path="/tourism"
       render={() => <PageRender goodsItem={catalogBackpacks} />}
     />
+    <Route exact path="/basket" component={Basket} />
   </BrowserRouter>,
   document.getElementById("root")
 );

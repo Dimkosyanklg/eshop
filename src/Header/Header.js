@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => (
   <HeaderBody>
@@ -20,50 +20,78 @@ const Header = () => (
         <HeaderIcons>
           <i className="fas fa-map-marker-alt"></i>
           <i className="fas fa-user"></i>
-          <i className="fas fa-shopping-cart"></i>
+          <Link to="/basket">
+            <i className="fas fa-shopping-cart"></i>
+          </Link>
         </HeaderIcons>
       </HeaderContent>
     </HeaderContainer>
     <Navigation>
       <MenuMain>
         <MenuItem>
-          <Link to="/gadget">Гаджеты</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/gadget">
+            Гаджеты
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/computer">Компьютеры</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/computer">
+            Компьютеры
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/photo">Фото</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/photo">
+            Фото
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/tv">TV</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/tv">
+            TV
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/audio">Аудио</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/audio">
+            Аудио
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/house-appliances">Бытовая техника</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/house-appliances">
+            Бытовая техника
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/climate">Климат</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/climate">
+            Климат
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/house">Дом</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/house">
+            Дом
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/for-children">Детские товары</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/for-children">
+            Детские товары
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/car">Авто</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/car">
+            Авто
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/tools">Инструмент</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/tools">
+            Инструмент
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/tourism">Туризм</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/tourism">
+            Туризм
+          </NavLink>
         </MenuItem>
         <MenuItem>
-          <Link to="/sport">Спорт</Link>
+          <NavLink activeStyle={{ color: "red" }} to="/sport">
+            Спорт
+          </NavLink>
         </MenuItem>
       </MenuMain>
     </Navigation>
@@ -110,19 +138,24 @@ const MenuItem = styled.li`
   text-align: center;
 
   a {
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
     text-decoration: none;
     color: rgb(100, 100, 100);
     font-size: 0.8vw;
-    font-weight: 600;
   }
 `;
 const HeaderIcons = styled.div`
-  width: 20%;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 10%;
   color: rgb(212, 212, 212);
   display: flex;
   justify-content: space-around;
+  
+  a:visited {
+    color: rgb(212, 212, 212);
+  }
 `;
 const SearchBar = styled.div`
   width: 70%;
