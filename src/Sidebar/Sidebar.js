@@ -113,6 +113,7 @@ const Sidebar = (props) => (
         </PriceSortBlock>
       </SortBlock>
     </SidebarContent>
+    <FindButton>Подобрать</FindButton>
   </SidebarContainer>
 );
 
@@ -154,6 +155,14 @@ const PriceSortBlock = styled.div`
     -webkit-appearance: none;
     margin: 0;
 }
+`;
+const FindButton = styled.button`
+  height: 5%;
+  width: 90%;
+  margin: 5% 5%;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: linear-gradient(to top right, #dedede, #f5f5f5);
 `;
 
 export default Sidebar;

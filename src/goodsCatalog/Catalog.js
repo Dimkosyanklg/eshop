@@ -88,6 +88,7 @@ const GoodsItem = styled.div`
   border-radius: 5px;
   margin-bottom: 1%;
   margin-left: 1%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 1vw;
 
