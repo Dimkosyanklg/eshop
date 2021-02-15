@@ -5,7 +5,7 @@ import MainPage from "./MainPage.js";
 import Basket from "./Basket/Basket.js";
 import { catalogSoccerBalls } from "./goodsCatalog/catalogSoccerBalls.js";
 import { catalogBackpacks } from "./goodsCatalog/catalogBackpacks.js";
-import { BrowserRouter, Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 ReactDOM.render(
   <BrowserRouter>

@@ -117,7 +117,7 @@ const GoodsItemPrice = styled.div`
   width: 67%;
   height: 10%;
   color: rgb(237, 20, 20);
-  font-weight: 900;
+  font-weight: 600;
   font-size: 1.1em;
 `;
 const ToBasket = styled.div`

@@ -53,16 +53,65 @@ class CreateButtons extends React.Component {
   }
 }
 
+class PriceSort extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { fromValue: "", toValue: "" };
+  }
+
+  changeHandlerTo = (e) => {
+    this.setState({ toValue: e.target.value });
+  };
+
+  changeHandlerFrom = (e) => {
+    this.setState({ fromValue: e.target.value });
+  };
+
+  test = () => {
+    console.log(this.state);
+  };
+
+  render() {
+    return (
+      <PriceSortBlock>
+        от{" "}
+        <input
+          type="number"
+          name="from"
+          value={this.state.fromValue}
+          onChange={this.changeHandlerFrom}
+        />
+        {" "}до{" "}
+        <input
+          type="number"
+          name="to"
+          value={this.state.toValue}
+          onChange={this.changeHandlerTo}
+        />
+        <button onClick={this.test} />
+      </PriceSortBlock>
+    );
+  }
+}
+
 const Sidebar = (props) => (
   <SidebarContainer>
     <SidebarContent>
-      <SortHeader>Производители</SortHeader>
-      <ButtonsContainer>
-        <CreateButtons
-          goodsItem={props.goodsItem}
-          getFilterData={props.getFilterData}
-        />
-      </ButtonsContainer>
+      <SortBlock>
+        <SortHeader>Производители</SortHeader>
+        <FirmSort>
+          <CreateButtons
+            goodsItem={props.goodsItem}
+            getFilterData={props.getFilterData}
+          />
+        </FirmSort>
+      </SortBlock>
+      <SortBlock>
+        <SortHeader>Цена</SortHeader>
+        <PriceSortBlock>
+          <PriceSort />
+        </PriceSortBlock>
+      </SortBlock>
     </SidebarContent>
   </SidebarContainer>
 );
@@ -80,7 +129,7 @@ const SidebarContent = styled.div`
   width: 90%;
   margin: 5% 5%;
 `;
-const ButtonsContainer = styled.div`
+const FirmSort = styled.div`
   margin-top: 5%;
   display: flex;
   justify-content: flex-start;
@@ -88,6 +137,23 @@ const ButtonsContainer = styled.div`
 `;
 const SortHeader = styled.div`
   font-weight: 600;
+`;
+const SortBlock = styled.div`
+  margin-bottom: 5%;
+`;
+const PriceSortBlock = styled.div`
+  margin-top: 5%;
+
+  input {
+    width: 33%;
+    outline: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 `;
 
 export default Sidebar;
