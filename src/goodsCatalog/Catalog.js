@@ -10,9 +10,9 @@ class Catalog extends React.Component {
 
   isEmptyObj = (obj) => {
     for (let key in obj) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   };
 
   // checkedTest = (arr) => {
