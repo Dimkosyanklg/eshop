@@ -13,11 +13,6 @@ class Sidebar extends React.Component {
     this.setState({ [sortParam]: value });
   };
 
-  
-    
-   
-  
-
   render() {
     return (
       <SidebarContainer>
@@ -31,10 +26,15 @@ class Sidebar extends React.Component {
           </SortBlock>
           <SortBlock>
             <SortHeader>Цена</SortHeader>
-            <PriceSort getSortData={this.getSortData} />
+            <PriceSort
+              goodsItem={this.props.goodsItem}
+              getSortData={this.getSortData}
+            />
           </SortBlock>
         </SidebarContent>
-        <FindButton onClick={(e) => this.props.getFilterData(e, this.state)}>Подобрать</FindButton>
+        <FindButton onClick={(e) => console.log(this.state)}>
+          Подобрать
+        </FindButton>
       </SidebarContainer>
     );
   }

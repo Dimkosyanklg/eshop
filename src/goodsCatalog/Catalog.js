@@ -52,18 +52,19 @@ class Catalog extends React.Component {
   //   }
   // }
   render() {
-    console.log(this.props.sortParam);
-    if (this.isEmptyObj(this.props.sortParam)) {
-      return <CatalogRender goodsItem={this.props.goodsItem} />;
-    } else {
-      return (
-        <CatalogSortRender
-          goodsItem={this.props.goodsItem}
-          sortParam={this.props.sortParam}
-          isEmptyObj={this.isEmptyObj}
-        />
-      );
-    }
+    return <div>123{console.log(this.state)}</div>;
+    // console.log(this.props.sortParam);
+    // if (this.isEmptyObj(this.props.sortParam)) {
+    //   return <CatalogRender goodsItem={this.props.goodsItem} />;
+    // } else {
+    //   return (
+    //     <CatalogSortRender
+    //       goodsItem={this.props.goodsItem}
+    //       sortParam={this.props.sortParam}
+    //       isEmptyObj={this.isEmptyObj}
+    //     />
+    //   );
+    // }
   }
 }
 

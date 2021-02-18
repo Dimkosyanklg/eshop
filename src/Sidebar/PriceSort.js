@@ -16,10 +16,25 @@ class PriceSort extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-      if (this.state !== prevState) {
-          this.props.getSortData(this.state, "price")
-      }
+    if (this.state !== prevState) {
+      this.idPriceSorted();
+    }
   }
+
+  idPriceSorted = () => {
+    let sorted = this.props.goodsItem.filter((item) => {
+      let price = item.price.split(" ")[0];
+      if (
+        Number(price) >= Number(this.state.fromValue) &&
+        Number(price) <= Number(this.state.toValue)
+      ) {
+        return item;
+      }
+    });
+    sorted = sorted.map((item) => item.id);
+    this.props.getSortData(sorted, "price");
+    console.log(this.state)
+  };
 
   render() {
     return (

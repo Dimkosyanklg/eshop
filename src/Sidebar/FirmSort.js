@@ -28,9 +28,26 @@ class FirmSort extends React.Component {
     });
   };
 
+  idFirmSorted = () => {
+    let checkedFirms = this.state.firmsArray.filter((item) => {
+      if (item.checked) {
+        return item;
+      }
+    });
+    let sorted = this.props.goodsItem.filter((item) => {
+      for (let i = 0; i < checkedFirms.length; i++) {
+        if (item.firm === checkedFirms[i].label) {
+          return item;
+        }
+      }
+    });
+    sorted = sorted.map(item => item.id);
+    this.props.getSortData(sorted, "firm");
+  };
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state !== prevState) {
-      this.props.getSortData(this.state.firmsArray, "firm");
+      this.idFirmSorted();
     }
   }
   render() {
