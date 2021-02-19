@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-<<<<<<< HEAD
 import { intersection } from "lodash";
 
 const CatalogSortRender = (props) => {
@@ -19,13 +18,6 @@ const CatalogSortRender = (props) => {
     }
   } else {
     matched = sortParam[0];
-=======
-
-const CatalogSortRender = (props) => {
-  let matched = [];
-  for (let key in props.sortParam) {
-    matched = matched.concat(props.sortParam[key]);
->>>>>>> 781d096b9a4ec9de5029d851076ddfbd3e5f5500
   }
   let goodsItem = props.goodsItem.filter(
     (item) => matched.indexOf(item.id) > -1
