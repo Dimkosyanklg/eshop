@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 class Catalog extends React.Component {
+<<<<<<< Updated upstream
   constructor(props) {
     super(props);
     this.state = { filteredGoodsItem: [] };
@@ -25,6 +26,14 @@ class Catalog extends React.Component {
     if (this.checkedTest(this.props.firms)) {
       // Если кнопки не нажаты, то рендерятся все товары
       this.setState({ filteredGoodsItem: this.props.goodsItem });
+=======
+  render() {
+    if (
+      this.props.sortParam.firm.length === 0 &&
+      this.props.sortParam.price.length === 0
+    ) {
+      return <CatalogRender goodsItem={this.props.goodsItem} />;
+>>>>>>> Stashed changes
     } else {
       // Массив выбранных кнопок
       let checkedFirms = this.props.firms.filter((item) => {
