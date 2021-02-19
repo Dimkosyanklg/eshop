@@ -1,54 +1,24 @@
 import React from "react";
 import styled from "styled-components";
-<<<<<<< HEAD
-import { intersection } from "lodash";
 
-const CatalogSortRender = (props) => {
-  let sortParam = [];
-  let matched = [];
-  let i = 0;
-  for (let key in props.sortParam) {
-    if (props.sortParam[key].length !== 0) {
-      sortParam[i] = props.sortParam[key];
-      i++;
-    }
-  }
-  if (sortParam.length > 1) {
-    for (let i = 0; i < sortParam.length - 1; i++) {
-      matched = intersection(sortParam[i], sortParam[i + 1]);
-    }
-  } else {
-    matched = sortParam[0];
-=======
-
-const CatalogSortRender = (props) => {
-  let matched = [];
-  for (let key in props.sortParam) {
-    matched = matched.concat(props.sortParam[key]);
->>>>>>> 781d096b9a4ec9de5029d851076ddfbd3e5f5500
-  }
-  let goodsItem = props.goodsItem.filter(
-    (item) => matched.indexOf(item.id) > -1
-  );
-  return (
-    <GoodsContainer>
-      {goodsItem.map(({ id, name, imgSrc, price }) => (
-        <GoodsItem key={id}>
-          <GoodsItemImage>
-            <img src={imgSrc} alt="" />
-          </GoodsItemImage>
-          <GoodsItemName>
-            <a href="">{name}</a>
-          </GoodsItemName>
-          <PRICE_PLUS_TOBASKET>
-            <GoodsItemPrice>{`${price} ₽`}</GoodsItemPrice>
-            <ToBasket>В корзину</ToBasket>
-          </PRICE_PLUS_TOBASKET>
-        </GoodsItem>
-      ))}
-    </GoodsContainer>
-  );
-};
+const CatalogRender = (props) => (
+  <GoodsContainer>
+    {props.goodsItem.map(({ id, name, imgSrc, price }) => (
+      <GoodsItem key={id}>
+        <GoodsItemImage>
+          <img src={imgSrc} alt="" />
+        </GoodsItemImage>
+        <GoodsItemName>
+          <a href="">{name}</a>
+        </GoodsItemName>
+        <PRICE_PLUS_TOBASKET>
+          <GoodsItemPrice>{`${price} ₽`}</GoodsItemPrice>
+          <ToBasket>В корзину</ToBasket>
+        </PRICE_PLUS_TOBASKET>
+      </GoodsItem>
+    ))}
+  </GoodsContainer>
+);
 
 const GoodsContainer = styled.div`
   display: flex;
@@ -124,5 +94,4 @@ const PRICE_PLUS_TOBASKET = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-export default CatalogSortRender;
+export default CatalogRender;

@@ -14,21 +14,20 @@ const PageContent = styled.div`
 class CatalogBody extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      //this.state.firms передается в Catalog для сортировки
-      firms: [], // компонент Sidebar установит this.state.firms
-    };
+    this.state = { sortParam: { firm: [], price: [] } };
   }
 
-  /* Метод для получения фирм товаров из компонента Sidebar */
-  getFilterData = (value) => {
-    this.setState({ firms: value });
+  getFilterData = (e, value) => {
+    this.setState({ sortParam: value });
   };
 
   render() {
     return (
       <PageContent>
-        <Catalog goodsItem={this.props.goodsItem} firms={this.state.firms} />
+        <Catalog
+          goodsItem={this.props.goodsItem}
+          sortParam={this.state.sortParam}
+        />
         <Sidebar
           goodsItem={this.props.goodsItem}
           getFilterData={this.getFilterData}

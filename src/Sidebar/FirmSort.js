@@ -4,6 +4,10 @@ import styled from "styled-components";
 class FirmSort extends React.Component {
   constructor(props) {
     super(props);
+<<<<<<< HEAD
+=======
+    // this.state.firmsArray - названия фирм для создания кнопок сортировки
+>>>>>>> 781d096b9a4ec9de5029d851076ddfbd3e5f5500
     this.state = {
       firmsArray: Array.from(
         new Set(
@@ -15,6 +19,11 @@ class FirmSort extends React.Component {
     };
   }
 
+<<<<<<< HEAD
+=======
+  /* Метод для обработки нажатий на кнопки */
+  /* Перезаписывает state при нажатии на кнопку */
+>>>>>>> 781d096b9a4ec9de5029d851076ddfbd3e5f5500
   checkboxHandler = (e, currentId) => {
     this.setState({
       firmsArray: this.state.firmsArray.map(({ label, id, checked }) =>
