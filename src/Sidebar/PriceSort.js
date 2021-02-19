@@ -15,26 +15,46 @@ class PriceSort extends React.Component {
     this.setState({ fromValue: e.target.value });
   };
 
+  idPriceSorted = () => {
+    let sorted = [];
+    if (this.state.fromValue === "" || this.state.toValue === "") {
+      /*                                                              */
+      if (this.state.fromValue === "") {
+        sorted = this.props.goodsItem.filter((item) => {
+          return item.price <= Number(this.state.toValue);
+        });
+        sorted = sorted.length === 0 ? ["no_match"] : sorted;
+      }
+      /*                                                                    */
+      if (this.state.toValue === "") {
+        sorted = this.props.goodsItem.filter((item) => {
+          return item.price >= Number(this.state.fromValue);
+        });
+        sorted = sorted.length === 0 ? ["no_match"] : sorted;
+      }
+      /*                                                                       */
+      if (this.state.fromValue === "" && this.state.toValue === "") {
+        sorted = [];
+      }
+      /*                                                                        */
+    } else {
+      sorted = this.props.goodsItem.filter((item) => {
+        return (
+          item.price >= Number(this.state.fromValue) &&
+          item.price <= Number(this.state.toValue)
+        );
+      });
+      sorted = sorted.length === 0 ? ["no_match"] : sorted;
+    }
+    sorted = sorted[0] === "no_match" ? sorted : sorted.map((item) => item.id);
+    this.props.getSortData(sorted, "price");
+  };
+
   componentDidUpdate(prevProps, prevState) {
     if (this.state !== prevState) {
       this.idPriceSorted();
     }
   }
-
-  idPriceSorted = () => {
-    let sorted = this.props.goodsItem.filter((item) => {
-      let price = item.price.split(" ")[0];
-      if (
-        Number(price) >= Number(this.state.fromValue) &&
-        Number(price) <= Number(this.state.toValue)
-      ) {
-        return item;
-      }
-    });
-    sorted = sorted.map((item) => item.id);
-    this.props.getSortData(sorted, "price");
-    console.log(this.state)
-  };
 
   render() {
     return (

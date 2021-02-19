@@ -6,12 +6,16 @@ import PriceSort from "./PriceSort.js";
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { firm: [], price: [] };
   }
 
   getSortData = (value, sortParam) => {
     this.setState({ [sortParam]: value });
   };
+
+  componentDidMount() {
+    this.props.getFilterData(true, this.state);
+  }
 
   render() {
     return (
@@ -32,7 +36,7 @@ class Sidebar extends React.Component {
             />
           </SortBlock>
         </SidebarContent>
-        <FindButton onClick={(e) => console.log(this.state)}>
+        <FindButton onClick={(e) => this.props.getFilterData(e, this.state)}>
           Подобрать
         </FindButton>
       </SidebarContainer>

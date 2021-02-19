@@ -14,8 +14,7 @@ const PageContent = styled.div`
 class CatalogBody extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = { sortParam: { firm: [], price: [] } };
   }
 
   getFilterData = (e, value) => {
@@ -25,7 +24,10 @@ class CatalogBody extends React.Component {
   render() {
     return (
       <PageContent>
-        <Catalog goodsItem={this.props.goodsItem} sortParam={this.state.sortParam} />
+        <Catalog
+          goodsItem={this.props.goodsItem}
+          sortParam={this.state.sortParam}
+        />
         <Sidebar
           goodsItem={this.props.goodsItem}
           getFilterData={this.getFilterData}

@@ -12,7 +12,7 @@ const CatalogRender = (props) => (
           <a href="">{name}</a>
         </GoodsItemName>
         <PRICE_PLUS_TOBASKET>
-          <GoodsItemPrice>{price}</GoodsItemPrice>
+          <GoodsItemPrice>{`${price} ₽`}</GoodsItemPrice>
           <ToBasket>В корзину</ToBasket>
         </PRICE_PLUS_TOBASKET>
       </GoodsItem>
@@ -94,4 +94,4 @@ const PRICE_PLUS_TOBASKET = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
- export default CatalogRender;
+export default CatalogRender;

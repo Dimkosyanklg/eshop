@@ -152,7 +152,7 @@ const HeaderIcons = styled.div`
   color: rgb(212, 212, 212);
   display: flex;
   justify-content: space-around;
-  
+
   a:visited {
     color: rgb(212, 212, 212);
   }
