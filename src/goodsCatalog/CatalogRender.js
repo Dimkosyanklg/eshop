@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ToBasket from "./ToBasket.js";
 
 const CatalogRender = (props) => (
   <GoodsContainer>
@@ -13,7 +14,9 @@ const CatalogRender = (props) => (
         </GoodsItemName>
         <PRICE_PLUS_TOBASKET>
           <GoodsItemPrice>{`${price} ₽`}</GoodsItemPrice>
-          <ToBasket>В корзину</ToBasket>
+          <ToBasketContainer>
+            <ToBasket goodsItem={{id,name,imgSrc,price}}/>
+          </ToBasketContainer>
         </PRICE_PLUS_TOBASKET>
       </GoodsItem>
     ))}
@@ -70,21 +73,11 @@ const GoodsItemPrice = styled.div`
   font-weight: 600;
   font-size: 1.1em;
 `;
-const ToBasket = styled.div`
+const ToBasketContainer = styled.div`
   width: 30%;
   margin-right: 3%;
-  font-size: 0.7em;
-  border: solid 2px red;
-  border-radius: 3px;
-  background-color: red;
-  color: #ffffff;
-  text-align: center;
-  cursor: pointer;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s, opacity 0.3s;
 
-  ${GoodsItem}:hover & {
+  ${GoodsItem}:hover & > * {
     visibility: visible;
     opacity: 1;
   }
