@@ -22,7 +22,12 @@ const CatalogSortRender = (props) => {
   let goodsItem = props.goodsItem.filter(
     (item) => matched.indexOf(item.id) > -1
   );
-  return <CatalogRender goodsItem={goodsItem} />;
+  return (
+    <CatalogRender
+      goodsItem={goodsItem}
+      getBasketData={props.getBasketData}
+    />
+  );
 };
 
 export default CatalogSortRender;

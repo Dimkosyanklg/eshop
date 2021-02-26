@@ -15,7 +15,10 @@ const CatalogRender = (props) => (
         <PRICE_PLUS_TOBASKET>
           <GoodsItemPrice>{`${price} ₽`}</GoodsItemPrice>
           <ToBasketContainer>
-            <ToBasket goodsItem={{id,name,imgSrc,price}}/>
+            <ToBasket
+              goodsItem={{ id, name, imgSrc, price }}
+              getBasketData={props.getBasketData}
+            />
           </ToBasketContainer>
         </PRICE_PLUS_TOBASKET>
       </GoodsItem>

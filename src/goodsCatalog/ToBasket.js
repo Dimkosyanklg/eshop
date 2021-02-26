@@ -6,7 +6,7 @@ import { AppContext } from "../AppContext.js";
 class ToBasket extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { label: "В корзину", status: "outside" };
+    this.state = { status: "outside" };
   }
 
   static contextType = AppContext;
