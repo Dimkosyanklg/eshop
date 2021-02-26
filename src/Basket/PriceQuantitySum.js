@@ -24,17 +24,20 @@ class PriceQuantitySum extends React.Component {
 }
 
 const Price = styled.div`
+  height: 85%;
   width: 15%;
   text-align: center;
   font-size: 1.4em;
 `;
 
 const Quantity = styled.div`
+  height: 85%;
   width: 15%;
   text-align: center;
 `;
 
 const Sum = styled.div`
+  height: 85%;
   width: 20%;
   text-align: center;
   font-size: 1.4em;

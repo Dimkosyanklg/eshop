@@ -9,13 +9,13 @@ class BasketRender extends React.Component {
   render() {
     return (
       <ItemsBody>
-        {this.context.basket.map(({ id, name, price, imgSrc }) => (
-          <ItemContainer key={id}>
+        {this.context.basket.map((item) => (
+          <ItemContainer key={item.name}>
             <Item>
               <ItemImage>
-                <img src={imgSrc} alt="" />
+                <img src={item.imgSrc} alt="" />
               </ItemImage>
-              <ItemDescription>{name}</ItemDescription>
+              <ItemDescription>{item.name}</ItemDescription>
             </Item>
             <Receiving>
               <form>
@@ -32,7 +32,15 @@ class BasketRender extends React.Component {
               </form>
             </Receiving>
             {/* Объединил Price, Quantity и Sum для того, чтобы сумму считать */}
-            <PriceQuantitySum price={price}></PriceQuantitySum>
+            <PriceQuantitySum price={item.price}></PriceQuantitySum>
+            <RemoveButton
+              onClick={(e) => {
+                this.context.removeFromContext(item);
+                console.log(this.context.basket);
+              }}
+            >
+              Убрать из корзины
+            </RemoveButton>
           </ItemContainer>
         ))}
       </ItemsBody>
@@ -48,12 +56,14 @@ const ItemsBody = styled.div`
 
 const ItemContainer = styled.div`
   display: flex;
-  height: 8vw;
+  flex-wrap: wrap;
+  height: 9vw;
   margin-top: 2vw;
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px dashed #e4e4e4;
 `;
 
 const Item = styled.div`
+  height: 85%;
   width: 25%;
   display: flex;
 `;
@@ -74,6 +84,7 @@ const ItemDescription = styled.div`
 `;
 
 const Receiving = styled.div`
+  height: 85%;
   width: 25%;
   form {
     height: 100%;
@@ -88,6 +99,14 @@ const RadioBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+`;
+
+const RemoveButton = styled.div`
+  height: 15%;
+  font-size: 0.8em;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #005baa;
 `;
 
 export default BasketRender;
