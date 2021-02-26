@@ -8,6 +8,7 @@ class BasketBody extends React.Component {
   render() {
     return (
       <BasketContent>
+        {/* Верхушка с названиями-------------------------------------------------*/}
         <BasketHead>Корзина ({this.context.basket.length} товаров)</BasketHead>
         <ItemsHead>
           <Item>Товар</Item>
@@ -16,6 +17,7 @@ class BasketBody extends React.Component {
           <Quantity>Количество</Quantity>
           <Sum>Сумма</Sum>
         </ItemsHead>
+        {/* Контент корзины-------------------------------------------------------*/}
         <BasketRender></BasketRender>
       </BasketContent>
     );

@@ -7,6 +7,7 @@ class PriceSort extends React.Component {
     this.state = { fromValue: "", toValue: "" };
   }
 
+  /* Хэндлеры для инпутов цены */
   changeHandlerTo = (e) => {
     this.setState({ toValue: e.target.value });
   };
@@ -14,29 +15,32 @@ class PriceSort extends React.Component {
   changeHandlerFrom = (e) => {
     this.setState({ fromValue: e.target.value });
   };
+  /* -------------------------- */
 
+  /* Передает id отфильтрованных товаров в CatalogBody.js */
   idPriceSorted = () => {
     let sorted = [];
+    /* Нет хотя бы одного параметра цены */
     if (this.state.fromValue === "" || this.state.toValue === "") {
-      /*                                                              */
+      /* Нет параметра ОТ */
       if (this.state.fromValue === "") {
         sorted = this.props.goodsItem.filter((item) => {
           return item.price <= this.state.toValue;
         });
         sorted = sorted.length === 0 ? ["no_match"] : sorted;
       }
-      /*                                                                    */
+      /* Нет параметра ДО */
       if (this.state.toValue === "") {
         sorted = this.props.goodsItem.filter((item) => {
           return item.price >= this.state.fromValue;
         });
         sorted = sorted.length === 0 ? ["no_match"] : sorted;
       }
-      /*                                                                       */
+      /* Нет обоих параметров */
       if (this.state.fromValue === "" && this.state.toValue === "") {
         sorted = [];
       }
-      /*                                                                        */
+      /* Есть оба параметра */
     } else {
       sorted = this.props.goodsItem.filter((item) => {
         return (
@@ -54,6 +58,7 @@ class PriceSort extends React.Component {
       this.idPriceSorted();
     }
   }
+  /* ------------------------------------------------------------------------------- */
 
   render() {
     return (
@@ -70,7 +75,7 @@ class PriceSort extends React.Component {
           type="number"
           name="to"
           value={this.state.toValue}
-          onChange={(e)=>this.changeHandlerTo(e)}
+          onChange={(e) => this.changeHandlerTo(e)}
         />
       </PriceSortBlock>
     );

@@ -31,6 +31,7 @@ class BasketRender extends React.Component {
                 </RadioBlock>
               </form>
             </Receiving>
+            {/* Объединил Price, Quantity и Sum для того, чтобы сумму считать */}
             <PriceQuantitySum price={price}></PriceQuantitySum>
           </ItemContainer>
         ))}

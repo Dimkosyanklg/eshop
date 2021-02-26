@@ -4,6 +4,8 @@ import styled from "styled-components";
 class FirmSort extends React.Component {
   constructor(props) {
     super(props);
+
+    /* Получаем значение фирм товаров */
     this.state = {
       firmsArray: Array.from(
         new Set(
@@ -15,6 +17,7 @@ class FirmSort extends React.Component {
     };
   }
 
+  /* Обработка изменения checkbox */
   checkboxHandler = (e, currentId) => {
     this.setState({
       firmsArray: this.state.firmsArray.map(({ label, id, checked }) =>
@@ -25,6 +28,7 @@ class FirmSort extends React.Component {
     });
   };
 
+  /* Передает id отфильтрованных товаров в CatalogBody.js */
   idFirmSorted = () => {
     let checkedFirms = this.state.firmsArray.filter((item) => {
       return item.checked;
@@ -42,6 +46,8 @@ class FirmSort extends React.Component {
       this.idFirmSorted();
     }
   }
+  /* --------------------------------------------------------- */
+
   render() {
     return (
       <FirmSortBlock>

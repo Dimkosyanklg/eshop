@@ -8,29 +8,19 @@ class Catalog extends React.Component {
     this.state = { basket: [] };
   }
 
-  getBasketData = (value) => {
-    this.setState({ basket: this.state.basket.push(value) });
-    console.log(this.state.basket);
-  };
-
   render() {
-    sessionStorage.basket = [];
+    /* Если нет никаких параметров сортировки, то рендер всех товаров */
     if (
       this.props.sortParam.firm.length === 0 &&
       this.props.sortParam.price.length === 0
     ) {
-      return (
-        <CatalogRender
-          goodsItem={this.props.goodsItem}
-          getBasketData={this.getBasketData}
-        />
-      );
+      return <CatalogRender goodsItem={this.props.goodsItem} />;
     } else {
+      /* Рендер с сортировкой */
       return (
         <CatalogSortRender
           goodsItem={this.props.goodsItem}
           sortParam={this.props.sortParam}
-          getBasketData={this.getBasketData}
         />
       );
     }

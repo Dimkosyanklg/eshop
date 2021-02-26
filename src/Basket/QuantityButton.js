@@ -7,6 +7,7 @@ class QuantityButton extends React.Component {
     this.state = { clicked: false, quantity: 1, quantityClicked: 1 };
   }
 
+  /* Передают родителю количество товара для подсчета суммы */
   componentDidMount() {
     this.props.getQuantity(this.state.quantity);
   }
@@ -16,8 +17,10 @@ class QuantityButton extends React.Component {
       this.props.getQuantity(this.state.quantity);
     }
   }
+  /*                                        */
 
   render() {
+    /* Обработка изменения количества товара */
     if (this.state.clicked) {
       return (
         <ClickedContainer>
@@ -70,6 +73,7 @@ class QuantityButton extends React.Component {
           </SaveCancelContainer>
         </ClickedContainer>
       );
+      /*---------------------------------------------------*/
     } else {
       return (
         <Container>

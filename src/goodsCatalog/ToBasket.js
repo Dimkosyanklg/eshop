@@ -11,15 +11,18 @@ class ToBasket extends React.Component {
 
   static contextType = AppContext;
 
+  /* Проверка на нахождение в корзине */
   componentDidMount() {
     if (findIndex(this.context.basket, this.props.goodsItem) > -1) {
       this.setState({ label: "Убрать", status: "inside" });
     }
   }
+  /* -------------------------------- */
 
   render() {
     if (this.state.status === "outside") {
       return (
+        /* Кнопка "В корзину" */
         <ToBasketButton
           onClick={() => {
             this.context.addToContext(this.props.goodsItem);
@@ -31,6 +34,7 @@ class ToBasket extends React.Component {
       );
     } else {
       return (
+        /* Кнопка "Убрать" */
         <RemoveFromBasketButton
           onClick={() => {
             this.context.removeFromContext(this.props.goodsItem);

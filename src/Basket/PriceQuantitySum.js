@@ -4,14 +4,15 @@ import QuantityButton from "./QuantityButton.js";
 
 class PriceQuantitySum extends React.Component {
   constructor(props) {
-      super(props);
-      this.state = {quantity: 1};
+    super(props);
+    this.state = { quantity: 1 };
   }
-    getQuantity = (value) => {
-        this.setState({quantity: value});
-    }
+  // Получает количество товара для Sum
+  getQuantity = (value) => {
+    this.setState({ quantity: value });
+  };
 
-    render() {
+  render() {
     return [
       <Price key="price">{`${this.props.price} ₽`}</Price>,
       <Quantity key="quantity">

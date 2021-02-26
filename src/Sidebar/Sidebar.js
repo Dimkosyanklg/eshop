@@ -9,10 +9,12 @@ class Sidebar extends React.Component {
     this.state = { firm: [], price: [] };
   }
 
+  /* Собирает параметры сортировки из дочерных компонентов */
   getSortData = (value, sortParam) => {
     this.setState({ [sortParam]: value });
   };
 
+  /* Передает в CatalogBody.js */
   componentDidMount() {
     this.props.getFilterData(true, this.state);
   }
