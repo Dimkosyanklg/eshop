@@ -7,6 +7,7 @@ const FooterContent = styled.footer`
   bottom: 0;
   position: relative;
   width: 100%;
+  margin-top: 20px;
 `;
 
 const Footer = () => <FooterContent>Тут футер</FooterContent>;

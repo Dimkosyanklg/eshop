@@ -1,11 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import Header from "../Header/Header.js";
+import BasketBody from "./BasketBody.js";
 import Footer from "../Footer/Footer.js";
 
 const Basket = () => [
   <Header key="header" />,
-  <div key="test">Каталог</div>,
+  <BasketBody key="basket-body" />,
   <Footer key="footer" />,
 ];
 

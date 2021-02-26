@@ -21,14 +21,14 @@ class PriceSort extends React.Component {
       /*                                                              */
       if (this.state.fromValue === "") {
         sorted = this.props.goodsItem.filter((item) => {
-          return item.price <= Number(this.state.toValue);
+          return item.price <= this.state.toValue;
         });
         sorted = sorted.length === 0 ? ["no_match"] : sorted;
       }
       /*                                                                    */
       if (this.state.toValue === "") {
         sorted = this.props.goodsItem.filter((item) => {
-          return item.price >= Number(this.state.fromValue);
+          return item.price >= this.state.fromValue;
         });
         sorted = sorted.length === 0 ? ["no_match"] : sorted;
       }
@@ -40,8 +40,7 @@ class PriceSort extends React.Component {
     } else {
       sorted = this.props.goodsItem.filter((item) => {
         return (
-          item.price >= Number(this.state.fromValue) &&
-          item.price <= Number(this.state.toValue)
+          item.price >= this.state.fromValue && item.price <= this.state.toValue
         );
       });
       sorted = sorted.length === 0 ? ["no_match"] : sorted;
@@ -71,7 +70,7 @@ class PriceSort extends React.Component {
           type="number"
           name="to"
           value={this.state.toValue}
-          onChange={this.changeHandlerTo}
+          onChange={(e)=>this.changeHandlerTo(e)}
         />
       </PriceSortBlock>
     );

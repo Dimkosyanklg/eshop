@@ -67,14 +67,14 @@ const GoodsItemName = styled.div`
   font-size: 0.8em;
 `;
 const GoodsItemPrice = styled.div`
-  width: 67%;
+  width: 60%;
   height: 10%;
   color: rgb(237, 20, 20);
   font-weight: 600;
   font-size: 1.1em;
 `;
 const ToBasketContainer = styled.div`
-  width: 30%;
+  width: 37%;
   margin-right: 3%;
 
   ${GoodsItem}:hover & > * {
