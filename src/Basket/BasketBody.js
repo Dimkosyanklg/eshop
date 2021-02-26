@@ -3,13 +3,34 @@ import styled from "styled-components";
 import BasketRender from "./BasketRender.js";
 import { AppContext } from "../AppContext.js";
 
+/* Функция для падежа существительного в зависимости от числа */
+function getNoun(number, one, two, five) {
+  let n = Math.abs(number);
+  n %= 100;
+  if (n >= 5 && n <= 20) {
+    return five;
+  }
+  n %= 10;
+  if (n === 1) {
+    return one;
+  }
+  if (n >= 2 && n <= 4) {
+    return two;
+  }
+  return five;
+}
+/* ------------------------------------------------------------- */
+
 class BasketBody extends React.Component {
   static contextType = AppContext;
   render() {
     return (
       <BasketContent>
         {/* Верхушка с названиями-------------------------------------------------*/}
-        <BasketHead>Корзина ({this.context.basket.length} товаров)</BasketHead>
+        <BasketHead>
+          Корзина ({this.context.basket.length}{" "}
+          {getNoun(this.context.basket.length, "товар", "товара", "товаров")})
+        </BasketHead>
         <ItemsHead>
           <Item>Товар</Item>
           <Receiving>Способ получения</Receiving>

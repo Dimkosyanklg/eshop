@@ -36,7 +36,6 @@ class BasketRender extends React.Component {
             <RemoveButton
               onClick={(e) => {
                 this.context.removeFromContext(item);
-                console.log(this.context.basket);
               }}
             >
               Убрать из корзины
