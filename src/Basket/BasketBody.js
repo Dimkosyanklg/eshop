@@ -49,6 +49,8 @@ const BasketContent = styled.div`
   margin: 0 15% 0 15%;
   font-family: "Roboto", sans-serif;
   font-size: 1vw;
+  min-height: 50vw;
+  height: auto;
 `;
 
 const BasketHead = styled.div`

@@ -7,6 +7,8 @@ const PageContent = styled.div`
   position: relative;
   display: flex;
   align-items: flex-start;
+  min-height: 50vw;
+  height: auto;
   margin: 20px 15% 0 15%;
 `;
 

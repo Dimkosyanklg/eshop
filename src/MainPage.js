@@ -13,7 +13,8 @@ body {
 
 // Тестовая главная страница
 const MainContent = styled.div`
-  height: 500px;
+  min-height: 50vw;
+  height: auto;
   margin: 20px 15% 0 15%;
 `;
 

@@ -102,13 +102,13 @@ const HeaderBody = styled.header`
   margin-top: 20px;
 `;
 const HeaderContainer = styled.div`
-  background-color: royalblue;
+  background-color: #005aab;
 `;
 const HeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 5vw;
   margin-left: 15%;
   margin-right: 15%;
   width: 70%;
@@ -118,7 +118,7 @@ const HeaderContent = styled.div`
   }
 
   .fab.fa-github {
-    font-size: 50px;
+    font-size: 4vw;
     color: #000000;
   }
 `;
@@ -152,6 +152,7 @@ const HeaderIcons = styled.div`
   color: rgb(212, 212, 212);
   display: flex;
   justify-content: space-around;
+  font-size: 1.2vw;
 
   a:visited {
     color: rgb(212, 212, 212);
